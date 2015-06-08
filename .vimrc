@@ -10,6 +10,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" uniteを設定
+NeoBundle 'Shougo/unite.vim'
 " NERDTreeを設定
 NeoBundle 'scrooloose/nerdtree'
 " autocloseを設定
@@ -17,7 +19,8 @@ NeoBundle 'Townk/vim-autoclose'
 " Emmetを設定
 NeoBundle 'mattn/emmet-vim'
 " カラースキーマの設定
-NeoBundle 'tomasr/molokai'
+NeoBundle 'vim-scripts/darktango.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
 
 call neobundle#end()
 
@@ -31,3 +34,4 @@ NeoBundleCheck
 "------------------------
 
 set number
+colorscheme darkblue
