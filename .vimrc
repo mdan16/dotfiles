@@ -16,6 +16,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Townk/vim-autoclose'
 " Emmetを設定
 NeoBundle 'mattn/emmet-vim'
+" カラースキーマの設定
+NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
 
@@ -29,4 +31,3 @@ NeoBundleCheck
 "------------------------
 
 set number
-syntax on
