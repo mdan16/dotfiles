@@ -33,5 +33,22 @@ NeoBundleCheck
 "End Neobundle Settings.
 "------------------------
 
+" タブ文字１つあたりのスペースの数
+set ts=4
+set sw=4
+
 set number
+set undofile
 colorscheme darkblue
+
+" {}の改行
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+
+" 挿入モード時のカーソル移動
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-h> <Left>
+"inoremap <C-l> <Right>
+
+" 挿入からノーマル
+inoremap <C-j> <Esc>
