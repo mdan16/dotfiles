@@ -41,6 +41,9 @@ set number
 set undofile
 colorscheme molokai
 syntax on
+" クリップボードを有効に
+set clipboard&
+set clipboard^=unnamedplus
 
 " {}の改行
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
