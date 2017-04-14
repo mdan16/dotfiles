@@ -44,6 +44,8 @@ syntax on
 " クリップボードを有効に
 set clipboard&
 set clipboard^=unnamedplus
+" backspaceで改行を削除
+set backspace=2
 
 " {}の改行
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
