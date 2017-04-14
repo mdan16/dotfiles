@@ -38,12 +38,22 @@ set ts=4
 set sw=4
 
 set number
-set undofile
+" set undofile
+" カラースキーマ
 colorscheme molokai
 syntax on
+" 行ハイライト
+set cursorline
 " クリップボードを有効に
 set clipboard&
 set clipboard^=unnamedplus
+" 不可視文字を可視化
+set list
+set listchars=tab:»-,trail:-,nbsp:%,eol:↲
+" カーソル位置
+set ruler
+" ステータス画面
+set laststatus=2
 
 " {}の改行
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
