@@ -19,7 +19,6 @@ NeoBundle 'Townk/vim-autoclose'
 " Emmetを設定
 NeoBundle 'mattn/emmet-vim'
 " カラースキーマの設定
-" NeoBundle 'vim-scripts/darktango.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'ujihisa/unite-colorscheme'
 
@@ -41,6 +40,7 @@ set sw=4
 set number
 set undofile
 colorscheme molokai
+syntax on
 
 " {}の改行
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
