@@ -21,6 +21,8 @@ NeoBundle 'mattn/emmet-vim'
 " カラースキーマの設定
 NeoBundle 'tomasr/molokai'
 NeoBundle 'ujihisa/unite-colorscheme'
+" status line
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 
