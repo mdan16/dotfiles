@@ -19,7 +19,8 @@ NeoBundle 'Townk/vim-autoclose'
 " Emmetを設定
 NeoBundle 'mattn/emmet-vim'
 " カラースキーマの設定
-NeoBundle 'tomasr/molokai'
+" NeoBundle 'tomasr/molokai'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'ujihisa/unite-colorscheme'
 " status line
 NeoBundle 'itchyny/lightline.vim'
@@ -46,7 +47,9 @@ set shiftwidth=4
 set number
 " set undofile
 " カラースキーマ
-colorscheme molokai
+" colorscheme molokai
+set background=dark
+colorscheme hybrid
 syntax on
 " 行ハイライト
 set cursorline
