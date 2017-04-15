@@ -36,8 +36,12 @@ NeoBundleCheck
 "------------------------
 
 " タブ文字１つあたりのスペースの数
-set ts=4
-set sw=4
+" set ts=4
+" set sw=4
+set tabstop=4
+set autoindent
+set expandtab
+set shiftwidth=4
 
 set number
 " set undofile
