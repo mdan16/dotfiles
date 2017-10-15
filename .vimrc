@@ -41,6 +41,13 @@ NeoBundleCheck
 "End Neobundle Settings.
 "------------------------
 
+" エンコーディング
+set encoding=utf-8
+set fileencodings=utf-8 "保存時の文字コード
+set fileencodings=utf-8,euc-jp,cp932 "読み込み
+set fileformats=unix,dos,mac
+set ambiwidth=double
+
 " タブ文字１つあたりのスペースの数
 " set ts=4
 " set sw=4
