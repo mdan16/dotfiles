@@ -47,6 +47,19 @@ set fileencodings=utf-8 "保存時の文字コード
 set fileencodings=utf-8,euc-jp,cp932 "読み込み
 set fileformats=unix,dos,mac
 set ambiwidth=double
+set guifont=Ricty:h12:cSHIFTJIS
+
+" gvimメニュー
+source $VIMRUNTIME/delmenu.vim
+set langmenu=ja_jp.utf-8
+source $VIMRUNTIME/menu.vim
+if has("multi_lang")
+    language C
+endif
+
+" backup, undo
+set nobackup
+set noundofile
 
 " タブ文字１つあたりのスペースの数
 " set ts=4
@@ -67,7 +80,7 @@ syntax on
 set cursorline
 " クリップボードを有効に
 set clipboard&
-set clipboard^=unnamedplus
+"set clipboard^=unnamedplus
 " backspaceで改行を削除
 set backspace=2
 " 不可視文字を可視化
