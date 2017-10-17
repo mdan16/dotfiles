@@ -89,6 +89,11 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 
 " 挿入からノーマル
 inoremap <C-j> <Esc>
+
+" タブ移動
+nnoremap <C-n> gt
+nnoremap <C-p> gT
+
 " USキーボード用
 nnoremap ; :
 " minttyのカーソル形状
