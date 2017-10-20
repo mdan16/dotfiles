@@ -8,6 +8,9 @@ if has("multi_lang")
 endif
 set guioptions-=m
 set guioptions-=T
+" 画面サイズ
+set lines=40
+set columns=120
 
 " backup, undo
 set nobackup
