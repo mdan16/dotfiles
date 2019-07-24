@@ -1,0 +1,6 @@
+set number
+set cursorline
+inoremap <C-j> <Esc>
+nnoremap <C-n> gt
+nnoremap <C-p> gT
+nnoremap ; :

@@ -21,6 +21,8 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'ujihisa/unite-colorscheme'
 " status line
 NeoBundle 'itchyny/lightline.vim'
+" syntax for scala
+NeoBundle 'derekwyatt/vim-scala'
 
 if has('lua')
     " 自動補完
@@ -68,6 +70,7 @@ set cursorline
 " クリップボードを有効に
 set clipboard&
 set clipboard^=unnamedplus
+set clipboard+=unnamed
 " backspaceで改行を削除
 set backspace=2
 " 不可視文字を可視化
@@ -93,6 +96,9 @@ inoremap <C-j> <Esc>
 " タブ移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+
+" タグ移動
+source $VIMRUNTIME/macros/matchit.vim
 
 " USキーボード用
 nnoremap ; :
@@ -124,3 +130,6 @@ if neobundle#is_installed('neocomplete.vim')
 
     let g:neosnippet#snippets_directory='~/.vim/snippets'
 endif
+
+" tex
+let g:tex_conceal=''
