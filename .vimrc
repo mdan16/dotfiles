@@ -1,3 +1,14 @@
+" Directory Settings
+if !isdirectory(expand("$HOME/.vim/swap"))
+    call mkdir(expand("$HOME/.vim/swap"), "p")
+endif
+set directory=$HOME/.vim/swap//
+set undofile
+if !isdirectory(expand("$HOME/.vim/undodir"))
+    call mkdir(expand("$HOME/.vim/undodir"), "p")
+endif
+set undodir=$HOME/.vim/undodir
+
 "Neobundle Settings.
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 
@@ -7,21 +18,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" uniteを設定
 NeoBundle 'Shougo/unite.vim'
-" NERDTreeを設定
 NeoBundle 'scrooloose/nerdtree'
-" autocloseを設定
 NeoBundle 'Townk/vim-autoclose'
-" Emmetを設定
 NeoBundle 'mattn/emmet-vim'
-" カラースキーマの設定
 NeoBundle 'tomasr/molokai'
 "NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'ujihisa/unite-colorscheme'
-" status line
 NeoBundle 'itchyny/lightline.vim'
-" syntax for scala
 NeoBundle 'derekwyatt/vim-scala'
 
 if has('lua')
@@ -59,9 +63,7 @@ set expandtab
 set shiftwidth=4
 
 set number
-" set undofile
 " カラースキーマ
-" colorscheme molokai
 set background=dark
 colorscheme molokai
 syntax on
@@ -102,6 +104,7 @@ source $VIMRUNTIME/macros/matchit.vim
 
 " USキーボード用
 nnoremap ; :
+
 " minttyのカーソル形状
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
