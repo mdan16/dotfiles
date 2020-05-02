@@ -20,6 +20,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdtree'
+let NERDTreeShowBookmarks = 1
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tomasr/molokai'
@@ -82,6 +83,7 @@ set listchars=tab:»-,trail:-,nbsp:%,eol:↲
 set ruler
 " ステータス画面
 set laststatus=2
+set wildmenu
 
 " {}の改行
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
