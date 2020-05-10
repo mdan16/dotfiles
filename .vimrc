@@ -9,40 +9,39 @@ if !isdirectory(expand("$HOME/.vim/undodir"))
 endif
 set undodir=$HOME/.vim/undodir
 
-"Neobundle Settings.
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call plug#begin('~/.vim/plugged')
 
-" neobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'scrooloose/nerdtree'
+Plug 'junegunn/vim-plug'
+Plug 'Shougo/unite.vim'
+Plug 'scrooloose/nerdtree'
 let NERDTreeShowBookmarks = 1
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tomasr/molokai'
-"NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'derekwyatt/vim-scala'
+Plug 'Townk/vim-autoclose'
+Plug 'mattn/emmet-vim'
+Plug 'tomasr/molokai'
+Plug 'ujihisa/unite-colorscheme'
+Plug 'itchyny/lightline.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 if has('lua')
     " 自動補完
-    NeoBundle 'Shougo/neocomplete.vim'
+    Plug 'Shougo/neocomplete.vim'
     " スニペット
-    NeoBundle 'Shougo/neosnippet'
-    NeoBundle 'Shougo/neosnippet-snippets'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
 endif
 
-call neobundle#end()
+call plug#end()
 
 "Required:
 filetype plugin indent on
-
-NeoBundleCheck
 
 "------------------------
 "End Neobundle Settings.
@@ -56,8 +55,6 @@ set fileformats=unix,dos,mac
 set ambiwidth=double
 
 " タブ文字１つあたりのスペースの数
-" set ts=4
-" set sw=4
 set tabstop=4
 set autoindent
 set expandtab
@@ -114,7 +111,7 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 " 補完・スニペット
-if neobundle#is_installed('neocomplete.vim')
+if has('lua')
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#min_keyword_length = 3
