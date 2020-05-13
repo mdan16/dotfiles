@@ -15,6 +15,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let mapleader = ','
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
@@ -103,6 +105,11 @@ source $VIMRUNTIME/macros/matchit.vim
 
 " USキーボード用
 nnoremap ; :
+
+" leader mapping
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>gf :GFiles<cr>
+nnoremap <leader>w :Windows<cr>
 
 " minttyのカーソル形状
 let &t_ti.="\e[1 q"
