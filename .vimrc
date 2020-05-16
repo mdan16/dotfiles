@@ -19,6 +19,8 @@ let mapleader = ','
 
 call plug#begin('~/.vim/plugged')
 
+let g:plug_timeout = 300
+
 Plug 'junegunn/vim-plug'
 Plug 'Shougo/unite.vim'
 Plug 'scrooloose/nerdtree'
@@ -31,14 +33,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
-if has('lua')
-    " 自動補完
-    Plug 'Shougo/neocomplete.vim'
-    " スニペット
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
-endif
+"if has('lua')
+"    " 自動補完
+"    Plug 'Shougo/neocomplete.vim'
+"    " スニペット
+"    Plug 'Shougo/neosnippet'
+"    Plug 'Shougo/neosnippet-snippets'
+"endif
 
 call plug#end()
 
@@ -110,6 +113,7 @@ nnoremap ; :
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>gf :GFiles<cr>
 nnoremap <leader>w :Windows<cr>
+nnoremap <leader>b :Buffers<cr>
 
 " minttyのカーソル形状
 let &t_ti.="\e[1 q"
@@ -118,27 +122,27 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 " 補完・スニペット
-if has('lua')
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#min_keyword_length = 3
-    let g:neocomplete#enable_auto_delimiter = 1
-    let g:neocomplete#auto_completion_start_length = 1
-    " Plugin key-mappings.
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-    " For conceal markers.
-    if has('conceal')
-        set conceallevel=2 concealcursor=niv
-    endif
-
-    let g:neosnippet#snippets_directory='~/.vim/snippets'
-endif
+"if has('lua')
+"    let g:neocomplete#enable_at_startup = 1
+"    let g:neocomplete#enable_smart_case = 1
+"    let g:neocomplete#min_keyword_length = 3
+"    let g:neocomplete#enable_auto_delimiter = 1
+"    let g:neocomplete#auto_completion_start_length = 1
+"    " Plugin key-mappings.
+"    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"    xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
+"    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+"    " For conceal markers.
+"    if has('conceal')
+"        set conceallevel=2 concealcursor=niv
+"    endif
+"
+"    let g:neosnippet#snippets_directory='~/.vim/snippets'
+"endif
 
 " tex
 let g:tex_conceal=''
