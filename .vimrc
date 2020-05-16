@@ -34,6 +34,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+noremap <leader>] :YcmCompleter GoTo<cr>
 
 "if has('lua')
 "    " 自動補完
