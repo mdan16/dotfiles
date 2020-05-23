@@ -35,6 +35,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 noremap <leader>] :YcmCompleter GoTo<cr>
+Plug 'sjl/gundo.vim'
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
 
 "if has('lua')
 "    " 自動補完
@@ -87,6 +91,8 @@ set ruler
 " ステータス画面
 set laststatus=2
 set wildmenu
+
+set tags=tags;
 
 " {}の改行
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
