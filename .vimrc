@@ -33,12 +33,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 noremap <leader>] :YcmCompleter GoTo<cr>
 Plug 'sjl/gundo.vim'
 if has('python3')
     let g:gundo_prefer_python3 = 1
 endif
+Plug 'editorconfig/editorconfig-vim'
 
 "if has('lua')
 "    " 自動補完
