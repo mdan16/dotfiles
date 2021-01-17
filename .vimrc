@@ -107,8 +107,8 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap <C-j> <Esc>
 
 " タブ移動
-nnoremap <C-n> gt
-nnoremap <C-p> gT
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 
 " タグ移動
 source $VIMRUNTIME/macros/matchit.vim
