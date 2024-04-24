@@ -28,7 +28,7 @@ config.leader = { key = 'g', mods = 'CTRL', timeout_milliseconds = 1000 }
 
 config.keys = {
     {
-        key = 'y',
+        key = '[',
         mods = 'LEADER',
         action = wezterm.action.ActivateCopyMode,
     },
