@@ -33,6 +33,26 @@ config.keys = {
         action = wezterm.action.ActivateCopyMode,
     },
     {
+        key = 'c',
+        mods = 'LEADER',
+        action = wezterm.action.SpawnTab 'CurrentPaneDomain',
+    },
+    {
+        key = 'x',
+        mods = 'LEADER',
+        action = wezterm.action.CloseCurrentTab { confirm = true },
+    },
+    {
+        key = 'n',
+        mods = 'LEADER',
+        action = wezterm.action.ActivateTabRelative(1),
+    },
+    {
+        key = 'p',
+        mods = 'LEADER',
+        action = wezterm.action.ActivateTabRelative(-1),
+    },
+    {
         key = '|',
         mods = 'LEADER',
         action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
@@ -83,6 +103,14 @@ config.keys = {
         action = wezterm.action.AdjustPaneSize { "Down", 5 },
     },
 }
+
+for i = 1, 8 do
+    table.insert(config.keys, {
+        key = tostring(i),
+        mods = 'LEADER',
+        action = wezterm.action.ActivateTab(i - 1),
+    })
+end
 
 config.colors = {
     selection_bg = '#fffacd',
